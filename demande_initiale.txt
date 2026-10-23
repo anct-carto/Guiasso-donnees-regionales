@@ -1,0 +1,6 @@
+carte juste visuel 
+telechargement du xlsx des données guidasso de la région sur laquelle on clique
+affichage du nom de la région et du nombre de structures par région (soit le nombre de ligne du tableau?) 
+
+
+lien sur carto régionale Guid’Asso officielle https://ressources-guidasso.org/?GuidAssoPresDeChezMoi
