@@ -4,3 +4,4 @@ affichage du nom de la région et du nombre de structures par région (soit le n
 
 
 lien sur carto régionale Guid’Asso officielle https://ressources-guidasso.org/?GuidAssoPresDeChezMoi
+

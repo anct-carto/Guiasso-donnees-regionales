@@ -7,11 +7,25 @@
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<h1>Régions de France</h1>
-<p>Survolez une région (outre-mer inclus), cliquez pour télécharger son fichier Excel.</p>
-<svg id="map" role="img" aria-label="Carte des régions françaises"></svg>
-<div id="tip"></div>
-<p id="msg"></p>
+<header class="top">
+  <img class="logo" src="source/LOGO-ANCT+Marianne.png" alt="ANCT – Agence nationale de la cohésion des territoires">
+  <div class="titles">
+    <h1>LES POINTS D’APPUI GUID’ASSO DANS UN QPV OU DANS SA PROXIMITÉ</h1>
+    <p>Survolez une région (outre-mer inclus), cliquez pour télécharger son fichier Excel</p>
+  </div>
+  <a class="btn" href="https://associations.gouv.fr/points-appui" target="_blank" rel="noopener noreferrer">En savoir plus</a>
+</header>
+<div class="layout">
+  <nav aria-label="Cartes régionales Guid'Asso">
+    <p class="intro">Retrouvez toutes les coordonnées des points d’appui Guid’Asso dans les cartes régionales :</p>
+    <div id="links"></div>
+  </nav>
+  <main>
+    <svg id="map" role="img" aria-label="Carte des régions françaises"></svg>
+    <div id="tip"></div>
+    <p id="msg"></p>
+  </main>
+</div>
 <script src="js/config.js"></script>
 <script src="data/regions.js"></script>
 <script src="js/map.js"></script>

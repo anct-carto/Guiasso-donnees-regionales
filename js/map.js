@@ -4,6 +4,22 @@
   const svg = document.getElementById("map"), tip = document.getElementById("tip"), msg = document.getElementById("msg");
   svg.setAttribute("viewBox", window.VIEWBOX);
 
+  // Menu texte à gauche : deux groupes, régions classées par ordre alphabétique (liens dans config.js)
+  const menu = document.getElementById("links");
+  const OM = new Set(["guadeloupe", "martinique", "guyane", "lareunion", "mayotte"]);
+  const byName = (a, b) => a.n.localeCompare(b.n, "fr");
+  if (menu) [["France hexagonale", r => !OM.has(r.slug)], ["Outre-mer", r => OM.has(r.slug)]].forEach(([title, keep]) => {
+    const h = document.createElement("h2"), ul = document.createElement("ul");
+    h.textContent = title; menu.appendChild(h); menu.appendChild(ul);
+    window.REGIONS.filter(keep).sort(byName).forEach(r => {
+      const url = (cfg.links || {})[r.slug], li = document.createElement("li");
+      let el;
+      if (url) { el = document.createElement("a"); el.href = url; el.target = "_blank"; el.rel = "noopener noreferrer"; }
+      else { el = document.createElement("span"); el.className = "off"; el.title = "Pas de lien pour le moment"; }
+      el.textContent = r.n; li.appendChild(el); ul.appendChild(li);
+    });
+  });
+
   window.CIRCLES.forEach(([x, y, r]) => {
     const c = document.createElementNS(NS, "circle");
     c.setAttribute("cx", x); c.setAttribute("cy", y); c.setAttribute("r", r);
