@@ -5,7 +5,7 @@
 body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--font);font-weight:500;min-height:100vh;padding:10px 12px 8px;box-sizing:border-box}
 h1{font-size:1.6rem;margin:0 0 4px;font-weight:700}
 p{margin:0 0 16px;color:var(--muted);font-size:.9rem;text-align:center}
-svg{width:100%;max-height:calc(100vh - 100px);height:auto}
+svg{width:100%;max-height:calc(100vh - 112px);height:auto}
 path{fill:var(--reg);stroke:var(--stroke);stroke-width:.9;stroke-linejoin:round;vector-effect:non-scaling-stroke;cursor:pointer;transition:fill .15s}
 path:hover,path:focus{fill:var(--hover);outline:none}
 circle{fill:none;stroke:var(--muted);stroke-width:1.2;stroke-dasharray:1 1;vector-effect:non-scaling-stroke;pointer-events:none;opacity:.8}
@@ -14,7 +14,8 @@ circle{fill:none;stroke:var(--muted);stroke-width:1.2;stroke-dasharray:1 1;vecto
 #tip .n,#tip .c{display:block}
 #tip .n{font-weight:700}
 #tip .c{font-weight:500;opacity:.85;margin-top:2px}
-.layout{display:flex;gap:24px;align-items:flex-start}
+.layout{position:relative;display:flex;gap:24px;align-items:flex-start;min-height:calc(100vh - 102px)}
+.layout::before{content:"";position:absolute;top:0;bottom:0;left:340px;width:1px;background:#666}
 main{flex:1;min-width:0;display:flex;flex-direction:column;align-items:center}
 nav{flex:0 0 340px;position:sticky;top:10px;max-height:calc(100vh - 20px);overflow-y:auto}
 nav h2{font-size:1rem;margin:0 0 4px;font-weight:700;color:#313778}
@@ -24,9 +25,9 @@ nav a,nav .off{display:block;padding:2px 8px;line-height:1.2;border-radius:6px;f
 nav a{color:var(--fg)}
 nav a:hover,nav a:focus{background:var(--reg);outline:none}
 nav .off{color:var(--muted);opacity:.6;cursor:default}
-@media (max-width:800px){.layout{flex-direction:column;align-items:stretch}nav{position:static;flex-basis:auto}nav ul{columns:2;width:auto}}
+@media (max-width:800px){.layout{flex-direction:column;align-items:stretch;min-height:0}.layout::before{display:none}nav{border-bottom:1px solid #666;padding-bottom:12px}nav{position:static;flex-basis:auto}nav ul{columns:2;width:auto}}
 .top{display:flex;align-items:center;gap:16px;margin:0 0 16px}
-.top .logo{height:56px;width:auto;flex:none}
+.top .logo{height:68px;width:auto;flex:none}
 .top .titles{flex:1;min-width:0}
 .top h1{font-size:1.25rem;line-height:1.25;margin:0 0 4px;text-align:left;color:#313778;font-weight:800}
 .top p{font-size:.8rem;margin:0;text-align:left;color:#616DAF}
