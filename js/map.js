@@ -20,6 +20,15 @@
     });
   });
 
+  // Pop-up « i » (code source)
+  const ib = document.getElementById("info-btn"), ip = document.getElementById("info-pop");
+  if (ib && ip) {
+    const setPop = open => { ip.hidden = !open; ib.setAttribute("aria-expanded", open); };
+    ib.addEventListener("click", e => { e.stopPropagation(); setPop(ip.hidden); });
+    document.addEventListener("click", e => { if (!ip.contains(e.target)) setPop(false); });
+    document.addEventListener("keydown", e => { if (e.key === "Escape") setPop(false); });
+  }
+
   window.CIRCLES.forEach(([x, y, r]) => {
     const c = document.createElementNS(NS, "circle");
     c.setAttribute("cx", x); c.setAttribute("cy", y); c.setAttribute("r", r);

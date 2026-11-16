@@ -11,13 +11,13 @@
   <img class="logo" src="source/LOGO-ANCT+Marianne.png" alt="ANCT – Agence nationale de la cohésion des territoires">
   <div class="titles">
     <h1>LES POINTS D’APPUI GUID’ASSO DANS UN QPV OU DANS SA PROXIMITÉ</h1>
-    <p>Survolez une région (outre-mer inclus), cliquez pour télécharger son fichier Excel</p>
+    <p>Survolez une région, cliquez pour télécharger ses données</p>
   </div>
   <a class="btn" href="https://associations.gouv.fr/points-appui" target="_blank" rel="noopener noreferrer">En savoir plus</a>
 </header>
 <div class="layout">
   <nav aria-label="Cartes régionales Guid'Asso">
-    <p class="intro">Retrouvez toutes les coordonnées des points d’appui Guid’Asso dans les cartes régionales :</p>
+    <p class="intro">Retrouvez toutes les coordonnées des points d’appui Guid’Asso :</p>
     <div id="links"></div>
   </nav>
   <main>
@@ -26,6 +26,11 @@
     <p id="msg"></p>
   </main>
 </div>
+<footer class="credit">
+  <span><b>Réalisation</b> Cartographie PADT ANCT, novembre 2026</span>
+  <button id="info-btn" class="info" type="button" aria-label="Informations sur le code source" aria-expanded="false" aria-controls="info-pop">i</button>
+  <div id="info-pop" class="pop" role="dialog" aria-label="Code source" hidden>Le code source de cet outil est libre et consultable sur <a href="https://github.com/anct-carto/Guiasso-donnees-regionales" target="_blank" rel="noopener noreferrer">Github</a>.</div>
+</footer>
 <script src="js/config.js"></script>
 <script src="data/regions.js"></script>
 <script src="js/map.js"></script>
